@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <p>Made by Edson Garcia</p>
+    <p>Web programming IUPUI 2023</p>
+    <script>
+        // First number input
+        var numberOne = parseFloat(prompt("Enter your first number: "));
+
+        // Check if the first number is a valid one
+        if (isNaN(numberOne)) {
+            alert("Invalid input. Please enter a valid number.");
+        } else {
+            // Operator input
+            var operator = prompt("Choose one of the following operators: [+], [-], [*], [/] ");
+
+            // Second number input
+            var numberTwo = parseFloat(prompt("Now enter your second number: "));
+
+            // Check if the second number is a valid one
+            if (isNaN(numberTwo)) {
+                alert("Invalid number. Please enter a valid number.");
+            } else {
+                // Perform calculations
+                var result;
+
+                if (operator == "+") {
+                    result = numberOne + numberTwo;
+                } else if (operator == "-") {
+                    result = numberOne - numberTwo;
+                } else if (operator == "*") {
+                    result = numberOne * numberTwo;
+                } else if (operator == "/") {
+                    if (numberTwo != 0) {
+                        result = numberOne / numberTwo;
+                    } else {
+                        alert("Error: unable to divide by zero.");
+                    }
+                } else {
+                    alert("Invalid operator. Please use +, -, *, or /.");
+                }
+
+                // Display the result
+                if (result != undefined) {
+                    alert("Result: " + numberOne + operator + numberTwo + "=" + result);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
